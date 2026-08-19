@@ -1,0 +1,4 @@
+union: type
+merging: interface
+recursive: both
+class implements: interface
