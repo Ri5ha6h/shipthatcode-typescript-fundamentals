@@ -1,7 +1,15 @@
 // Print the greeting below.
-//console.log('Hello, TypeScript!');
 
-const lines: string = require('fs').readFileSync(0, 'utf-8').trim();
-const a = lines.split('').reverse().join('');
+const lines: string = require('fs').readFileSync(0, 'utf-8').trim().split('\n');
 
-console.log(a);
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: lines[0],
+  age: Number(lines[1])
+}
+
+console.log(`Hi, ${user.name}! You are ${user.age} years old.`);
