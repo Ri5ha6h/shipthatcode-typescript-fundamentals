@@ -1,15 +1,17 @@
 // Print the greeting below.
 
-const lines: string = require('fs').readFileSync(0, 'utf-8').trim().split('\n');
+const lines: string = require('fs').readFileSync(0, 'utf-8').trim();
 
-interface User {
-  name: string;
-  age: number;
+const num = Number(lines);
+if (num % 15 === 0) {
+  console.log("FizzBuzz");
 }
-
-const user: User = {
-  name: lines[0],
-  age: Number(lines[1])
+else if (num % 3 === 0) {
+  console.log("Fizz");
 }
-
-console.log(`Hi, ${user.name}! You are ${user.age} years old.`);
+else if (num % 5 === 0) {
+  console.log("Buzz");
+}
+else {
+  console.log(num);
+}
