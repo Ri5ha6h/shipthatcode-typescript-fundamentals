@@ -1,9 +1,13 @@
 // Print the greeting below.
 
-const lines: string = require('fs').readFileSync(0, 'utf-8').trim();
+function last<T>(arr: T[]): T | undefined{
+  if (arr.length === 0) return undefined;
 
-function square(num: number): number {
-  return num * num;
+  return arr[arr.length - 1];
 }
 
-console.log(square(Number(lines)));
+const line: string = require('fs').readFileSync(0, 'utf-8').trim();
+
+const nums: number[] = line.length === 0 ? [] : line.split(' ').map(Number);
+const v = last(nums);
+if (v !== undefined) console.log(v);
