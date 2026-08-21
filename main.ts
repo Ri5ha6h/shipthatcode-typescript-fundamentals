@@ -2,10 +2,8 @@
 
 const lines: string = require('fs').readFileSync(0, 'utf-8').trim();
 
-let sum: number = 0;
-
-for (let i = 1; i <= Number(lines); i++){
-  sum += i;
+function square(num: number): number {
+  return num * num;
 }
 
-console.log(sum);
+console.log(square(Number(lines)));
