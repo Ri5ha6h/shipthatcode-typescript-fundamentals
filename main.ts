@@ -1,10 +1,6 @@
 // Print the greeting below.
-const words: string[] = require('fs').readFileSync(0, 'utf-8').trim().split(' ');
+const nums: number[] = require('fs').readFileSync(0, 'utf-8').trim().split(' ').map(Number);
 
-const seen: Set<string> = new Set();
+const result: number = nums.filter((n) => n % 2 === 0).map((n) => n * n).reduce((t, n) => t + n, 0);
 
-for (let word of words) {
-  seen.add(word);
-}
-
-console.log(seen.size);
+console.log(result);
