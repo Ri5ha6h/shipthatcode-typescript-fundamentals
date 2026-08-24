@@ -1,6 +1,10 @@
 // Print the greeting below.
-const line: string = require('fs').readFileSync(0, 'utf-8').trim();
+const words: string[] = require('fs').readFileSync(0, 'utf-8').trim().split(' ');
 
-const nums: number[] = line.length === 0 ? [] : line.split(' ').map(Number);
-const max = nums.reduce((m, n) => n > m ? n : m);
-console.log(max);
+const seen: Set<string> = new Set();
+
+for (let word of words) {
+  seen.add(word);
+}
+
+console.log(seen.size);
